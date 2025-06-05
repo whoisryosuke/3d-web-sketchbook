@@ -1,10 +1,10 @@
+import CanvasDebug from "@/components/CanvasDebug/CanvasDebug";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
-import CanvasDebug from "../CanvasDebug/CanvasDebug";
 
 type Props = {};
 
-const Scene = (props: Props) => {
+const HelloWorld = (props: Props) => {
   return (
     <Canvas>
       <CanvasDebug />
@@ -15,10 +15,8 @@ const Scene = (props: Props) => {
         <boxGeometry />
         <meshStandardMaterial color="blue" />
       </mesh>
-
-      {/* <CanvasMaterial /> */}
     </Canvas>
   );
 };
 
-export default Scene;
+export default HelloWorld;
