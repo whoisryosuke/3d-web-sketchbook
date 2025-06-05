@@ -1,4 +1,10 @@
-const { readFileSync, copyFileSync, writeFileSync, existsSync } = require("fs");
+const {
+  readFileSync,
+  copyFileSync,
+  writeFileSync,
+  existsSync,
+  mkdirSync,
+} = require("fs");
 const path = require("path");
 
 const TEMPLATES = {
@@ -41,18 +47,27 @@ const generateSketch = async () => {
     "../templates",
     `${templateFilename}.tsx`
   );
-  const componentDestinationPath = path.join(
+  const componentParentPath = path.join(
     __dirname,
     "../src/sketches/",
+    `${sketchName}`
+  );
+  const componentDestinationPath = path.join(
+    componentParentPath,
     `${sketchName}.tsx`
   );
-  const componentFileExists = existsSync(componentDestinationPath);
+  const componentFileExists = existsSync(componentParentPath);
   if (componentFileExists) {
     console.error(
       "Component already exists! Try picking another name or deleting the old file."
     );
     return;
   }
+
+  // Create folder
+  mkdirSync(componentParentPath);
+
+  // Copy file
   copyFileSync(componentTemplatePath, componentDestinationPath);
 
   // Swap out placeholder name

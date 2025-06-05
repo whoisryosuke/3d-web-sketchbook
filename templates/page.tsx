@@ -1,9 +1,12 @@
 import SketchPage from "@/components/SketchPage/SketchPage";
 import dynamic from "next/dynamic";
 
-const Design = dynamic(() => import("@/sketches/ExampleComponent"), {
-  ssr: false,
-});
+const Design = dynamic(
+  () => import("@/sketches/ExampleComponent/ExampleComponent"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Page() {
   return (
