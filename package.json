@@ -10,11 +10,16 @@
     "sketch:new": "node scripts/generate-sketch.js"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
+    "@react-three/postprocessing": "^3.0.4",
+    "@whoisryosuke/oat-milk-design": "^0.1.0",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
     "three": "^0.177.0",
     "three-stdlib": "^2.36.0",
     "zustand": "^5.0.5"
