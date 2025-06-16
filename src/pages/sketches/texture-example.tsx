@@ -2,13 +2,7 @@ import SketchPage from "@/components/SketchPage/SketchPage";
 import dynamic from "next/dynamic";
 
 const Design = dynamic(
-  () => import("@/sketches/WaveformBufferGeoR2/WaveformBufferGeoR2"),
-  {
-    ssr: false,
-  }
-);
-const WaveformBufferDebugMenu = dynamic(
-  () => import("@/sketches/WaveformBufferGeoR2/WaveformBufferDebugMenu"),
+  () => import("@/sketches/TextureExample/TextureExample"),
   {
     ssr: false,
   }
@@ -16,9 +10,8 @@ const WaveformBufferDebugMenu = dynamic(
 
 export default function Page() {
   return (
-    <SketchPage title="WaveformBufferGeoR2">
+    <SketchPage title="TextureExample">
       <Design />
-      <WaveformBufferDebugMenu />
     </SketchPage>
   );
 }
